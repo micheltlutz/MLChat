@@ -24,10 +24,35 @@
 		D07CC9DF231ABFF900BF1B2F /* DateHeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CC9DE231ABFF900BF1B2F /* DateHeaderLabel.swift */; };
 		D07CC9E2231AE61700BF1B2F /* MLChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CC9E1231AE61700BF1B2F /* MLChatMessage.swift */; };
 		D07CC9E4231AE73A00BF1B2F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CC9E3231AE73A00BF1B2F /* String+Extension.swift */; };
+		D07CC9FD231AF2A600BF1B2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CC9FC231AF2A600BF1B2F /* AppDelegate.swift */; };
+		D07CC9FF231AF2A600BF1B2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CC9FE231AF2A600BF1B2F /* ViewController.swift */; };
+		D07CCA02231AF2A600BF1B2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07CCA00231AF2A600BF1B2F /* Main.storyboard */; };
+		D07CCA04231AF2A700BF1B2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07CCA03231AF2A700BF1B2F /* Assets.xcassets */; };
+		D07CCA07231AF2A700BF1B2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07CCA05231AF2A700BF1B2F /* LaunchScreen.storyboard */; };
+		D07CCA12231AF2A800BF1B2F /* MLChatDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CCA11231AF2A800BF1B2F /* MLChatDemoTests.swift */; };
+		D07CCA1F231AF3B700BF1B2F /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CCA1E231AF3B700BF1B2F /* ChatViewModel.swift */; };
+		D07CCA22231AF4B300BF1B2F /* MLChatinputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CCA20231AF47700BF1B2F /* MLChatinputView.swift */; };
+		D07CCA23231AF81200BF1B2F /* MLChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB211DA389CD00C63030 /* MLChat.framework */; };
+		D07CCA24231AF81200BF1B2F /* MLChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3549BB211DA389CD00C63030 /* MLChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D07CCA2C231AFFD500BF1B2F /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CCA29231AFEB400BF1B2F /* IQKeyboardManagerSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		3549BB671DA38ADB00C63030 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3549BAFC1DA387DB00C63030 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3549BB201DA389CD00C63030;
+			remoteInfo = "MLChat-iOS";
+		};
+		D07CCA0E231AF2A800BF1B2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3549BAFC1DA387DB00C63030 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D07CC9F9231AF2A500BF1B2F;
+			remoteInfo = MLChatDemo;
+		};
+		D07CCA25231AF81200BF1B2F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3549BAFC1DA387DB00C63030 /* Project object */;
 			proxyType = 1;
@@ -43,6 +68,17 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07CCA27231AF81300BF1B2F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D07CCA24231AF81200BF1B2F /* MLChat.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +109,19 @@
 		D07CC9DE231ABFF900BF1B2F /* DateHeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderLabel.swift; sourceTree = "<group>"; };
 		D07CC9E1231AE61700BF1B2F /* MLChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLChatMessage.swift; sourceTree = "<group>"; };
 		D07CC9E3231AE73A00BF1B2F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D07CC9FA231AF2A500BF1B2F /* MLChatDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MLChatDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07CC9FC231AF2A600BF1B2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D07CC9FE231AF2A600BF1B2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D07CCA01231AF2A600BF1B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D07CCA03231AF2A700BF1B2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D07CCA06231AF2A700BF1B2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D07CCA08231AF2A700BF1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D07CCA0D231AF2A800BF1B2F /* MLChatDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLChatDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07CCA11231AF2A800BF1B2F /* MLChatDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLChatDemoTests.swift; sourceTree = "<group>"; };
+		D07CCA13231AF2A800BF1B2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D07CCA1E231AF3B700BF1B2F /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		D07CCA20231AF47700BF1B2F /* MLChatinputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLChatinputView.swift; sourceTree = "<group>"; };
+		D07CCA29231AFEB400BF1B2F /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +140,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D07CC9F7231AF2A500BF1B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D07CCA2C231AFFD500BF1B2F /* IQKeyboardManagerSwift.framework in Frameworks */,
+				D07CCA23231AF81200BF1B2F /* MLChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07CCA0A231AF2A800BF1B2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,6 +165,8 @@
 				353A78F6224F762800055190 /* MLChat.playground */,
 				3549BB161DA3890B00C63030 /* Sources */,
 				3549BB191DA3890B00C63030 /* Tests */,
+				D07CC9FB231AF2A600BF1B2F /* MLChatDemo */,
+				D07CCA10231AF2A800BF1B2F /* MLChatDemoTests */,
 				3549BB061DA387DB00C63030 /* Products */,
 				357D954B1DA3F2B400AEC55F /* Frameworks */,
 			);
@@ -110,6 +177,8 @@
 			children = (
 				3549BB211DA389CD00C63030 /* MLChat.framework */,
 				3549BB611DA38ADB00C63030 /* MLChatTests-iOS.xctest */,
+				D07CC9FA231AF2A500BF1B2F /* MLChatDemo.app */,
+				D07CCA0D231AF2A800BF1B2F /* MLChatDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +224,7 @@
 		357D954B1DA3F2B400AEC55F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D07CCA29231AFEB400BF1B2F /* IQKeyboardManagerSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,6 +247,7 @@
 				D07CC9CA231AB1DB00BF1B2F /* RefreshControl.swift */,
 				D07CC9CC231AB27400BF1B2F /* DateHeaderView.swift */,
 				D07CC9DE231ABFF900BF1B2F /* DateHeaderLabel.swift */,
+				D07CCA20231AF47700BF1B2F /* MLChatinputView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +280,53 @@
 				D07CC9E1231AE61700BF1B2F /* MLChatMessage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D07CC9FB231AF2A600BF1B2F /* MLChatDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D07CCA1D231AF32700BF1B2F /* Controllers */,
+				D07CCA1B231AF30500BF1B2F /* Supporting Files */,
+				D07CCA1C231AF31000BF1B2F /* ViewModel */,
+			);
+			path = MLChatDemo;
+			sourceTree = "<group>";
+		};
+		D07CCA10231AF2A800BF1B2F /* MLChatDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				D07CCA11231AF2A800BF1B2F /* MLChatDemoTests.swift */,
+				D07CCA13231AF2A800BF1B2F /* Info.plist */,
+			);
+			path = MLChatDemoTests;
+			sourceTree = "<group>";
+		};
+		D07CCA1B231AF30500BF1B2F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D07CC9FC231AF2A600BF1B2F /* AppDelegate.swift */,
+				D07CCA00231AF2A600BF1B2F /* Main.storyboard */,
+				D07CCA03231AF2A700BF1B2F /* Assets.xcassets */,
+				D07CCA05231AF2A700BF1B2F /* LaunchScreen.storyboard */,
+				D07CCA08231AF2A700BF1B2F /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D07CCA1C231AF31000BF1B2F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D07CCA1E231AF3B700BF1B2F /* ChatViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D07CCA1D231AF32700BF1B2F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D07CC9FE231AF2A600BF1B2F /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,18 +381,57 @@
 			productReference = 3549BB611DA38ADB00C63030 /* MLChatTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D07CC9F9231AF2A500BF1B2F /* MLChatDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D07CCA14231AF2A800BF1B2F /* Build configuration list for PBXNativeTarget "MLChatDemo" */;
+			buildPhases = (
+				D07CC9F6231AF2A500BF1B2F /* Sources */,
+				D07CC9F7231AF2A500BF1B2F /* Frameworks */,
+				D07CC9F8231AF2A500BF1B2F /* Resources */,
+				D07CCA27231AF81300BF1B2F /* Embed Frameworks */,
+				D07CCA2B231AFF9A00BF1B2F /* Run Script - Carthage */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D07CCA26231AF81200BF1B2F /* PBXTargetDependency */,
+			);
+			name = MLChatDemo;
+			productName = MLChatDemo;
+			productReference = D07CC9FA231AF2A500BF1B2F /* MLChatDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D07CCA0C231AF2A800BF1B2F /* MLChatDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D07CCA17231AF2A800BF1B2F /* Build configuration list for PBXNativeTarget "MLChatDemoTests" */;
+			buildPhases = (
+				D07CCA09231AF2A800BF1B2F /* Sources */,
+				D07CCA0A231AF2A800BF1B2F /* Frameworks */,
+				D07CCA0B231AF2A800BF1B2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D07CCA0F231AF2A800BF1B2F /* PBXTargetDependency */,
+			);
+			name = MLChatDemoTests;
+			productName = MLChatDemoTests;
+			productReference = D07CCA0D231AF2A800BF1B2F /* MLChatDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3549BAFC1DA387DB00C63030 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = micheltlutz;
 				TargetAttributes = {
 					3549BB201DA389CD00C63030 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 25RYDD756Z;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -282,6 +439,17 @@
 						CreatedOnToolsVersion = 8.0;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+					};
+					D07CC9F9231AF2A500BF1B2F = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = 25RYDD756Z;
+						ProvisioningStyle = Automatic;
+					};
+					D07CCA0C231AF2A800BF1B2F = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = 25RYDD756Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D07CC9F9231AF2A500BF1B2F;
 					};
 				};
 			};
@@ -300,6 +468,8 @@
 			targets = (
 				3549BB201DA389CD00C63030 /* MLChat-iOS */,
 				3549BB601DA38ADB00C63030 /* MLChatTests-iOS */,
+				D07CC9F9231AF2A500BF1B2F /* MLChatDemo */,
+				D07CCA0C231AF2A800BF1B2F /* MLChatDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,6 +483,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3549BB5F1DA38ADB00C63030 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07CC9F8231AF2A500BF1B2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D07CCA07231AF2A700BF1B2F /* LaunchScreen.storyboard in Resources */,
+				D07CCA04231AF2A700BF1B2F /* Assets.xcassets in Resources */,
+				D07CCA02231AF2A600BF1B2F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07CCA0B231AF2A800BF1B2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,6 +527,25 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		D07CCA2B231AFF9A00BF1B2F /* Run Script - Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+			);
+			name = "Run Script - Carthage";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -353,6 +559,7 @@
 				D07CC9CB231AB1DB00BF1B2F /* RefreshControl.swift in Sources */,
 				D07CC9D2231AB2C400BF1B2F /* UIVIew+Extension.swift in Sources */,
 				D07CC9CD231AB27400BF1B2F /* DateHeaderView.swift in Sources */,
+				D07CCA22231AF4B300BF1B2F /* MLChatinputView.swift in Sources */,
 				D07CC9C8231AB0D900BF1B2F /* Configurations.swift in Sources */,
 				D07CC9DB231AB61B00BF1B2F /* MLChatMessageBotCell.swift in Sources */,
 				D07CC9E4231AE73A00BF1B2F /* String+Extension.swift in Sources */,
@@ -372,6 +579,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D07CC9F6231AF2A500BF1B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D07CC9FF231AF2A600BF1B2F /* ViewController.swift in Sources */,
+				D07CCA1F231AF3B700BF1B2F /* ChatViewModel.swift in Sources */,
+				D07CC9FD231AF2A600BF1B2F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D07CCA09231AF2A800BF1B2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D07CCA12231AF2A800BF1B2F /* MLChatDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -380,7 +605,36 @@
 			target = 3549BB201DA389CD00C63030 /* MLChat-iOS */;
 			targetProxy = 3549BB671DA38ADB00C63030 /* PBXContainerItemProxy */;
 		};
+		D07CCA0F231AF2A800BF1B2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D07CC9F9231AF2A500BF1B2F /* MLChatDemo */;
+			targetProxy = D07CCA0E231AF2A800BF1B2F /* PBXContainerItemProxy */;
+		};
+		D07CCA26231AF81200BF1B2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3549BB201DA389CD00C63030 /* MLChat-iOS */;
+			targetProxy = D07CCA25231AF81200BF1B2F /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D07CCA00231AF2A600BF1B2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D07CCA01231AF2A600BF1B2F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D07CCA05231AF2A700BF1B2F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D07CCA06231AF2A700BF1B2F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3549BB0B1DA387DB00C63030 /* Debug */ = {
@@ -508,11 +762,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 25RYDD756Z;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -528,11 +787,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 25RYDD756Z;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -580,6 +844,114 @@
 			};
 			name = Release;
 		};
+		D07CCA15231AF2A800BF1B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25RYDD756Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/MLChatDemo/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.micheltlutz.MLChatDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D07CCA16231AF2A800BF1B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25RYDD756Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/MLChatDemo/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.micheltlutz.MLChatDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D07CCA18231AF2A800BF1B2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25RYDD756Z;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MLChatDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.micheltlutz.MLChatDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MLChatDemo.app/MLChatDemo";
+			};
+			name = Debug;
+		};
+		D07CCA19231AF2A800BF1B2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25RYDD756Z;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = MLChatDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.micheltlutz.MLChatDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MLChatDemo.app/MLChatDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,6 +978,24 @@
 			buildConfigurations = (
 				3549BB6A1DA38ADB00C63030 /* Debug */,
 				3549BB6B1DA38ADB00C63030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D07CCA14231AF2A800BF1B2F /* Build configuration list for PBXNativeTarget "MLChatDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D07CCA15231AF2A800BF1B2F /* Debug */,
+				D07CCA16231AF2A800BF1B2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D07CCA17231AF2A800BF1B2F /* Build configuration list for PBXNativeTarget "MLChatDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D07CCA18231AF2A800BF1B2F /* Debug */,
+				D07CCA19231AF2A800BF1B2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

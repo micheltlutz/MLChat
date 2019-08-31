@@ -13,15 +13,13 @@ let package = Package(
     name: "MLChat",
     platforms: [
         .iOS(.v8),
-        .macOS(.v10_10),
-        .tvOS(.v9),
-        .watchOS(.v2),
+        .tvOS(.v9)
     ],
     products: [
         .library(
             name: "MLChat",
             targets: ["MLChat"]
-        ),
+        )
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -37,7 +35,7 @@ let package = Package(
             name: "MLChatTests",
             dependencies: ["MLChat"],
             path: "Tests"
-        ),
+        )
     ],
     swiftLanguageVersions: [.v5]
 )

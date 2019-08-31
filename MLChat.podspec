@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/michel_lutz'
   s.authors = { "Michel Anderson Lutz Teixeira" => "michel_lutz@icloud.com" }
   s.source = { :git => "https://github.com/micheltlutz/MLChat.git", :tag  => "v"+s.version.to_s }
-  s.platforms = { :ios => "9.0", :osx => "10.10", :tvos => "9.0", :watchos => "2.0" }
+  s.platforms = { :ios => "11.0", :tvos => "11.0" }
   s.requires_arc = true
   s.swift_version = '5.0'
   s.cocoapods_version = '>= 1.4.0'
@@ -16,5 +16,6 @@ Pod::Spec.new do |s|
   s.subspec "Core" do |ss|
     ss.source_files  = "Sources/**/*.swift"
     ss.framework  = "Foundation"
+    ss.framework  = "UIKit"
  end
 end

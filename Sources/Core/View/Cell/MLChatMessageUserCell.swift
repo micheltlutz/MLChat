@@ -16,29 +16,24 @@ final class MLChatMessageUserCell: MLChatCellBase, MLChatCellProtocol {
         chatConfigurations = configuration
         setupViewConfiguration()
     }
-
-//    override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
 }
 
 // MARK: - ViewConfiguration
 extension MLChatMessageUserCell: ViewConfiguration {
-    private func setUpFonts() {
+    private func setUpMessage() {
         if let nameFont = chatConfigurations.nameFont {
             messageName.font = nameFont
         }
         if let messageFont = chatConfigurations.messageFont {
             messageLabel.font = messageFont
         }
+        bubbleBackgroundView.backgroundColor = UIColor(hex: chatConfigurations.bubbleBackgroundColor)
+        messageName.textColor = UIColor(hex: chatConfigurations.messageColor)
+        messageLabel.textColor = UIColor(hex: chatConfigurations.messageColor)
     }
 
     public func setupConstraints() {
-        setUpFonts()
+        setUpMessage()
         NSLayoutConstraint.activate([
             bubbleBackgroundView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             bubbleBackgroundView.widthAnchor.constraint(lessThanOrEqualToConstant: 260),
@@ -52,7 +47,8 @@ extension MLChatMessageUserCell: ViewConfiguration {
 
             messageLabel.topAnchor.constraint(equalTo: messageName.bottomAnchor, constant: 4),
             messageLabel.leadingAnchor.constraint(equalTo: messageName.leadingAnchor),
-            messageLabel.trailingAnchor.constraint(equalTo: messageName.trailingAnchor)
+            messageLabel.trailingAnchor.constraint(equalTo: messageName.trailingAnchor),
+            messageLabel.bottomAnchor.constraint(equalTo: bubbleBackgroundView.bottomAnchor, constant: -16)
         ])
     }
 

@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
-class MLChat: UITableView {
-    static let name = "MLChat"
+public class MLChat: UITableView {
+    public static let name = "MLChat"
     private var refreshControlCustom: RefreshControl!
     private let heightHeaderSection: CGFloat = 60
     private var chatConfigurations: MLChatConfigurations = {
-        let chatDefaultConfigurations = MLChatConfigurations(useBotTyping: false,
+        let chatDefaultConfigurations = MLChatConfigurations(isMultiline: false,
                                                            actionColor: "FF4B69",
                                                            bubbleBackgroundColor: "D3D3D3",
                                                            messageColor: "000000",
@@ -36,7 +37,12 @@ class MLChat: UITableView {
         )
         return chatDefaultConfigurations
     }()
-    var messages: [MLChatMessage] = []
+    public var messages = [MLChatMessage]() {
+        didSet {
+            let offset = CGPoint(x: 0, y: contentSize.height - frame.size.height)
+            setContentOffset(offset, animated: false)
+        }
+    }
 
     // MARK: - Initialization
     public init(configurarion: MLChatConfigurations?) {
@@ -58,14 +64,39 @@ class MLChat: UITableView {
         delegate = self
         refreshControlCustom = RefreshControl(configuration: chatConfigurations)
         refreshControl = refreshControlCustom
-//        refreshControlCustom.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
-
-//        configureIQKeyboardManager()
+        refreshControlCustom.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        configureIQKeyboardManager()
     }
 
     private func registerCells() {
         register(MLChatMessageUserCell.self, forCellReuseIdentifier: MLChatMessageUserCell.cellId)
         register(MLChatMessageBotCell.self, forCellReuseIdentifier: MLChatMessageBotCell.cellId)
+    }
+
+    private func configureIQKeyboardManager() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 16.0
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+    }
+
+    @objc private func refreshData(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            self.refreshControlCustom.endRefreshing()
+        }
+    }
+
+    public func addMessage(_ message: MLChatMessage) {
+        messages.append(message)
+        reloadData()
+        scrollToBottom()
+    }
+
+    func scrollToBottom() {
+        if messages.count > 0 {
+            let indexPath = IndexPath(row: messages.count - 1, section: 0)
+            scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
     }
 
     @available(*, unavailable)
@@ -86,11 +117,11 @@ extension MLChat: UITableViewDelegate {
 
 // MARK: - DataSource
 extension MLChat: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch messages[indexPath.row].type {
         case .user:
             return makeUserCell(for: indexPath)

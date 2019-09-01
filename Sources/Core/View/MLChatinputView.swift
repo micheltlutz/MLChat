@@ -17,6 +17,11 @@ public final class MLChatInputView: UIView {
         messageTextView.textContainer.maximumNumberOfLines = chatConfigurations.maximumNumberOfLines
         return messageTextView
     }()
+    private var messageTextField: UITextField = {
+        let messageTextField = UITextField()
+        messageTextField.translatesAutoresizingMaskIntoConstraints = false
+        return messageTextField
+    }()
     private lazy var sendButton: UIButton = {
         let sendButton = UIButton()
         sendButton.setTitle(chatConfigurations.actionText, for: .normal)
@@ -37,8 +42,39 @@ public final class MLChatInputView: UIView {
     }
 
     @objc func sendButtonTapped() {
-        shouldSendMessage?(messageTextView.text)
-        messageTextView.text = ""
+        if chatConfigurations.isMultiline {
+            shouldSendMessage?(messageTextView.text)
+            messageTextView.text = ""
+        } else {
+            guard let text = messageTextField.text else { return }
+            shouldSendMessage?(text)
+            messageTextField.text = ""
+        }
+    }
+
+    public func setPlaceHolder(with text: String) {
+        messageTextField.placeholder = text
+    }
+
+    public func changeKeyboardType(with type: UIKeyboardType) {
+        messageTextField.keyboardType = type
+    }
+
+    public func changeFieldColor(with color: UIColor) {
+        if chatConfigurations.isMultiline {
+            messageTextView.backgroundColor = color
+        } else {
+            messageTextField.backgroundColor = color
+        }
+    }
+
+    public func setImageSendButton(with image: UIImage, tapped: UIImage?) {
+        sendButton.setTitle(nil, for: .normal)
+        sendButton.setImage(image, for: .normal)
+        if let tapped = tapped {
+            sendButton.setTitle(nil, for: .highlighted)
+            sendButton.setImage(tapped, for: .highlighted)
+        }
     }
 
     @available(*, unavailable)
@@ -51,7 +87,9 @@ public final class MLChatInputView: UIView {
 extension MLChatInputView: ViewConfiguration {
     private func setUpFonts() {
         if let messageFont = chatConfigurations.textViewFont {
-            messageTextView.font = messageFont
+            if chatConfigurations.isMultiline {
+                messageTextView.font = messageFont
+            }
         }
         if let actionFont = chatConfigurations.actionFont {
             sendButton.titleLabel?.font = actionFont
@@ -59,19 +97,35 @@ extension MLChatInputView: ViewConfiguration {
     }
     public func setupConstraints() {
         setUpFonts()
+        if chatConfigurations.isMultiline {
+            NSLayoutConstraint.activate([
+                messageTextView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+                messageTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+                messageTextView.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -10),
+                messageTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            ])
+        } else {
+            NSLayoutConstraint.activate([
+                heightAnchor.constraint(equalToConstant: 64),
+                messageTextField.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+                messageTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+                messageTextField.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -10),
+                messageTextField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            ])
+        }
         NSLayoutConstraint.activate([
-            messageTextView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            messageTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            messageTextView.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -10),
-            messageTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             sendButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             sendButton.widthAnchor.constraint(equalToConstant: 50),
             sendButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-            ])
+        ])
     }
 
     public func buildViewHierarchy() {
-        addSubview(messageTextView)
+        if chatConfigurations.isMultiline {
+            addSubview(messageTextView)
+        } else {
+            addSubview(messageTextField)
+        }
         addSubview(sendButton)
     }
 

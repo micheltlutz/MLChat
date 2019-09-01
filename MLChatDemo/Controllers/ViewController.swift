@@ -12,7 +12,7 @@ import MLChat
 class ViewController: UIViewController {
     private var chatBottomConstraint: NSLayoutConstraint!
     private var chatConfigurations: MLChatConfigurations = {
-        let chatDefaultConfigurations = MLChatConfigurations(useBotTyping: false,
+        let chatDefaultConfigurations = MLChatConfigurations(isMultiline: false,
                                                            actionColor: "FF4B69",
                                                            bubbleBackgroundColor: "D3D3D3",
                                                            messageColor: "000000",

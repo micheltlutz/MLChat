@@ -9,8 +9,8 @@
 import UIKit
 
 public struct MLChatConfigurations {
-    ///Flag for simulate bot typing text
-    public let useBotTyping: Bool
+    ///This flag define if input is TextView(true) TextField(false)
+    public let isMultiline: Bool
     ///Define color for button action
     public let actionColor: String
     ///Define background color for bubble
@@ -50,7 +50,7 @@ public struct MLChatConfigurations {
     ///Define font for Hello Message font
     public let helloMessageFont: UIFont?
 
-    public init(useBotTyping: Bool,
+    public init(isMultiline: Bool,
                 actionColor: String,
                 bubbleBackgroundColor: String,
                 messageColor: String,
@@ -70,7 +70,7 @@ public struct MLChatConfigurations {
                 actionFont: UIFont?,
                 textViewFont: UIFont?,
                 helloMessageFont: UIFont?) {
-        self.useBotTyping = useBotTyping
+        self.isMultiline = isMultiline
         self.actionColor = actionColor
         self.bubbleBackgroundColor = bubbleBackgroundColor
         self.messageColor = messageColor

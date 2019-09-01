@@ -14,7 +14,7 @@ public class MLChat: UITableView {
     private var refreshControlCustom: RefreshControl!
     private let heightHeaderSection: CGFloat = 60
     private var chatConfigurations: MLChatConfigurations = {
-        let chatDefaultConfigurations = MLChatConfigurations(useBotTyping: false,
+        let chatDefaultConfigurations = MLChatConfigurations(isMultiline: false,
                                                            actionColor: "FF4B69",
                                                            bubbleBackgroundColor: "D3D3D3",
                                                            messageColor: "000000",

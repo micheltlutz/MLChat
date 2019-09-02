@@ -77,6 +77,14 @@ public final class MLChatInputView: UIView {
         }
     }
 
+    public func setInputView(_ view: UIView) {
+        if chatConfigurations.isMultiline {
+            messageTextView.inputView = view
+        } else {
+            messageTextField.inputView = view
+        }
+    }
+
     @available(*, unavailable)
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

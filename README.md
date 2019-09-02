@@ -41,7 +41,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '11.0'
 use_frameworks!
 
-pod 'MLChat', '~> 1.0.1'
+pod 'MLChat', '~> 1.0.2'
 ```
 
 Then, run the following command:
@@ -67,7 +67,7 @@ $ brew install carthage
 To integrate MLChat into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "micheltlutz/MLChat" ~> 1.0.1
+github "micheltlutz/MLChat" ~> 1.0.2
 ```
 
 </details>
@@ -85,7 +85,7 @@ import PackageDescription
 let package = Package(
     name: "HelloMLChat",
     dependencies: [
-        .package(url: "https://github.com/micheltlutz/MLChat.git", .upToNextMajor(from: "1.0.1"))
+        .package(url: "https://github.com/micheltlutz/MLChat.git", .upToNextMajor(from: "1.0.2"))
     ],
     targets: [
         .target(name: "HelloMLChat", dependencies: ["MLChat"])

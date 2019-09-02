@@ -88,7 +88,9 @@ public class MLChat: UITableView {
 
     public func addMessage(_ message: MLChatMessage) {
         messages.append(message)
-        reloadData()
+        beginUpdates()
+        insertRows(at: [IndexPath(row: messages.count-1, section: 0)], with: .automatic)
+        endUpdates()
         scrollToBottom()
     }
 
@@ -106,14 +108,7 @@ public class MLChat: UITableView {
 }
 
 // MARK: - Delegate
-extension MLChat: UITableViewDelegate {
-//    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        if let firstMessageInSection = chatMessages[section].first {
-//            return DateHeaderView(with: firstMessageInSection.date)
-//        }
-//        return nil
-//    }
-}
+extension MLChat: UITableViewDelegate { }
 
 // MARK: - DataSource
 extension MLChat: UITableViewDataSource {

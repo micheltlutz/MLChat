@@ -146,7 +146,120 @@ $ git submodule update --init --recursive
 
 </p></details>
 
+
 ## Usage
+
+### ChatConfigurations
+
+* ChatConfigurations is optional if nil the library uses default configurations.
+
+```swift
+
+public struct ChatConfigurations {
+    ///Define color for button action
+    public let actionColor: String
+    ///Define background color for bubble
+    public let bubbleBackgroundColor: String
+    ///Define text color for message text
+    public let messageColor: String
+    ///Define text color for message text is incoming
+    public let messageColorIncoming: String
+    ///Define text color for message time
+    public let timerMessageColor: String
+    ///Define background color for bubble when message is incoming
+    public let bubbleBagroundColorIncoming: String
+    ///Define background color for chat
+    public let backgroundColor: String
+    ///Define text for send button
+    public let actionText: String
+    ///Define color for top line in TextView
+    public let borderColorInputView: String
+    ///Limit for height TextView
+    public let maximumNumberOfLines: Int
+    ///Custom image for activity indicator, when using this property the component UIRefreshControl shift de default activity indicator
+    public let customImageLoading: String?
+    ///Define hello message for new chat or chatMessages[]
+    public let helloMessage: String?
+    ///Define font color for helloMessage
+    public let helloMessageColor: String?
+    ///Define font for username
+    public let nameFont: UIFont?
+    ///Define font for Message
+    public let messageFont: UIFont?
+    ///Define font for Time message
+    public let timeFont: UIFont?
+    ///Define font for button action
+    public let actionFont: UIFont?
+    ///Define font for UITextView font
+    public let textViewFont: UIFont?
+    ///Define font for Hello Message font
+    public let helloMessageFont: UIFont?
+}
+```
+
+### Using
+
+After linked our .framework on project:
+
+```swift
+
+import MLChat
+
+private var chatConfigurations: ChatConfigurations = {
+        let chatDefaultConfigurations = ChatConfigurations(actionColor: "FF4B69",
+                                                           bubbleBackgroundColor: "D3D3D3",
+                                                           messageColor: "000000",
+                                                           messageColorIncoming: "FFFFFF",
+                                                           timerMessageColor: "B3B3B2",
+                                                           bubbleBagroundColorIncoming: "000000",
+                                                           backgroundColor: "FFFFFF",
+                                                           actionText: "Enviar",
+                                                           borderInputView: "9D9D9D",
+                                                           maximumNumberOfLines: 6,
+                                                           customImageLoading: nil,
+                                                           helloMessage: "Hello buddy! Can I help you?",
+                                                           helloMessageColor: "FF4B69",
+                                                           nameFont: nil,
+                                                           messageFont: nil,
+                                                           timeFont: nil,
+                                                           actionFont: nil,
+                                                           textViewFont: nil,
+                                                           helloMessageFont: nil)
+        return chatDefaultConfigurations
+    }()
+    
+    
+    private var chatInputView: ChatInputView!
+    private var chat: MLChat!
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    chatInputView = ChatInputView(configuration: chatConfigurations)
+    chat = ChatPayly(configurarion: chatConfigurations)
+    chat.chatMessages = chatMessageMock.chatMessages // mock messages see Demo Project
+}
+    
+```
+
+### Messages
+
+```swift 
+//Data Struct
+
+var chatMessages = [ChatMessage]()
+
+```
+
+### Messages model properties
+
+```swift 
+	let name: String
+	let text: String
+	let isIncoming: Bool
+	let date: Date 
+```
+
 
 ## Contributing
 
